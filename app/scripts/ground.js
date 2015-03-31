@@ -5,13 +5,13 @@ window.Ground = (function() {
     	this.el = el;
     	this.game = game;
     	this.sealvl = 7.6;
-    	this.x = 102.4;
+    	this.x = 0;
 	};
 
 	Ground.prototype.onFrame = function(delta) {
 
-		if (this.x < 0){
-			this.x = 100;
+		if (this.x < -102.4){
+			this.x = 0;
 		}
 		//this.x -= 5.64;
 		this.x -= 1.64;
