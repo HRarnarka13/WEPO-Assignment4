@@ -11,8 +11,8 @@ window.Game = (function() {
 		this.el = el;
 		this.player = new window.Player(this.el.find('.Player'), this);
 		this.ground = new window.Ground(this.el.find('.Ground'), this);
-		//this.toppipe = new window.Pipes(this.el.find('Toppipe'), this);
-		//this.bottompipe = new window.Pipes(this.el.find('Bottompipe'), this);
+		this.toppipe = new window.Pipe(this.el.find('.Toppipe'), this);
+		this.bottompipe = new window.Pipe(this.el.find('.Bottompipe'), this);
 		this.isPlaying = false;
 
 		// Cache a bound onFrame since we need it each frame.
@@ -37,6 +37,8 @@ window.Game = (function() {
 		// Update game entities.
 		this.player.onFrame(delta);
 		this.ground.onFrame(delta);
+		this.toppipe.onFrame(delta);
+		this.bottompipe.onFrame(delta);
 
 		// Request next frame.
 		window.requestAnimationFrame(this.onFrame);

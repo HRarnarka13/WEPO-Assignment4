@@ -71,10 +71,26 @@ background-position-y: -5em;
 	height: 7.6em;
 	margin-top: 50em;
 	background-image: url('/images/ground.png');
-	/* background-repeat: repeat-x; */
+	background-repeat: repeat-x;
 }
 .Toppipe {
 	position: absolute;
+	width: 14em;
+	height: 14em;
+	background-image: url('/images/pipe.png');
+	background-repeat: no-repeat;
+	-moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -ms-transform: scaleY(-1);
+    transform: scaleY(-1);
+    -ms-filter: "FlipH";
+    filter: FlipH;
+}
+
+.Bottompipe {
+	position: absolute;
+	margin-top: 40em;
 	width: 14em;
 	height: 14em;
 	background-image: url('/images/pipe.png');

@@ -14,9 +14,9 @@ window.Ground = (function() {
 			this.x = 100;
 		}
 		//this.x -= 5.64;
-		this.x -= 1.64;
+		this.x -= 0.4;
 		//this.el.css('background-position', this.x + 'px 0');
-		console.log(this.x);
+		// console.log(this.x);
 		this.el.css('transform', 'translate(' + this.x + 'em)');
 	};
 
