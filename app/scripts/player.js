@@ -29,7 +29,7 @@ window.Player = (function() {
 
 	Player.prototype.onFrame = function(delta) {
 		if (Controls.didJump()) {
-			this.pos.y -= 0.3 * SPEED;
+			this.pos.y -= JUMP * SPEED;
 		} else {
 			this.pos.y += FALL;
 		}
