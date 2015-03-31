@@ -5,16 +5,19 @@ window.Ground = (function() {
     	this.el = el;
     	this.game = game;
     	this.sealvl = 7.6;
-    	this.x = 0;
+    	this.x = 102.4;
 	};
 
 	Ground.prototype.onFrame = function(delta) {
 
-		if (this.x < -1000){
-			this.x = 0;
+		if (this.x < 0){
+			this.x = 100;
 		}
-		this.x -= + 5.64;
-		this.el.css('background-position', this.x + 'px 0');
+		//this.x -= 5.64;
+		this.x -= 1.64;
+		//this.el.css('background-position', this.x + 'px 0');
+		console.log(this.x);
+		this.el.css('transform', 'translate(' + this.x + 'em)');
 	};
 
 	return Ground;
