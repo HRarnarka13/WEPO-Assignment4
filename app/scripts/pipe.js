@@ -16,7 +16,7 @@ window.Pipe = (function() {
 		this.top.x -= 0.4;
 
 		// console.log(this.top.x);
-		this.el.css('transform', 'translate(' + this.top.x + 'em)');
+		this.el.css('transform', 'translate3d(' + this.top.x + 'em, 0em, 0em)');
 	};
 
 	Pipe.prototype.generatePipes = function(first_argument) {
