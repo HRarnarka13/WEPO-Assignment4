@@ -28,8 +28,8 @@ window.Player = (function() {
 	};
 
 	Player.prototype.onFrame = function(delta) {
-		if (Controls.didJump()) {
-			this.pos.y -= JUMP * SPEED;
+		if (Controls.keys.space) {
+			this.pos.y -= 0.03 * SPEED;
 		} else {
 			this.pos.y += FALL;
 		}

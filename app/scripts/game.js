@@ -11,8 +11,9 @@ window.Game = (function() {
 		this.el = el;
 		this.player = new window.Player(this.el.find('.Player'), this);
 		this.ground = new window.Ground(this.el.find('.Ground'), this);
-		this.toppipe = new window.Pipe(this.el.find('.Toppipe'), this);
-		this.bottompipe = new window.Pipe(this.el.find('.Bottompipe'), this);
+		this.pipes = [];
+		this.pipes.push(new window.Pipe(this.el.find('.Toppipe'), this));
+		this.pipes.push(new window.Pipe(this.el.find('.Bottompipe'), this));
 		this.isPlaying = false;
 
 		// Cache a bound onFrame since we need it each frame.
@@ -37,9 +38,12 @@ window.Game = (function() {
 		// Update game entities.
 		this.player.onFrame(delta);
 		this.ground.onFrame(delta);
-		this.toppipe.onFrame(delta);
-		this.bottompipe.onFrame(delta);
-
+		for (var i = this.pipes.length - 1; i >= 0; i--) {
+			this.pipes[i].onFrame(delta); 
+		};
+		// this.toppipe.onFrame(delta);
+		// this.bottompipe.onFrame(delta);
+		
 		// Request next frame.
 		window.requestAnimationFrame(this.onFrame);
 	};
@@ -49,6 +53,10 @@ window.Game = (function() {
 	 */
 	Game.prototype.start = function() {
 		this.reset();
+		setInterval(function(){
+			this.pipes.push(new window.Pipe(this.el.find('.Toppipe'), this));
+			this.pipes.push(new window.Pipe(this.el.find('.Bottompipe'), this));
+		}, 3000);
 
 		// Restart the onFrame loop
 		this.lastFrame = +new Date() / 1000;
