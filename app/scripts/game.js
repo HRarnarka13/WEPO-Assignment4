@@ -53,10 +53,6 @@ window.Game = (function() {
 	 */
 	Game.prototype.start = function() {
 		this.reset();
-		setInterval(function(){
-			this.pipes.push(new window.Pipe(this.el.find('.Toppipe'), this));
-			this.pipes.push(new window.Pipe(this.el.find('.Bottompipe'), this));
-		}, 3000);
 
 		// Restart the onFrame loop
 		this.lastFrame = +new Date() / 1000;

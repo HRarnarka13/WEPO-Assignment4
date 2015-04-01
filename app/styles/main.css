@@ -66,6 +66,15 @@ background: red;
 background-image: url('/images/background.png');
 background-position-y: -5em;
 }
+.score {
+  position: absolute;
+  font-size: 3em;
+  width: 100%;
+  display: block;
+  text-align: center;
+  color: #fff;
+  z-index: 4;
+}
 .Ground {
 	position: absolute;
 	width: 204.8em;
