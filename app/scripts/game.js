@@ -53,7 +53,7 @@ window.Game = (function() {
 		var that = this;
 		this.intervalID = setInterval(function () {
 			return that.pipes.generatePipes();
-		},3000);
+		},1700);
 
 		// Restart the onFrame loop
 		this.lastFrame = +new Date() / 1000;

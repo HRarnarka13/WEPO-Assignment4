@@ -8,8 +8,8 @@ window.Pipe = (function() {
     	this.id = id;
     	this.game = game;
     	this.top = { x: 102.4, y: topHeight };
-    	var gap = 40 - (topHeight + GAPHEIGHT);
-    	this.bottom = { x:102.4, y: gap };
+    	var bottomHeight = GAPHEIGHT;
+    	this.bottom = { x:102.4, y: bottomHeight };
 
 
     	// Create a top an bottom pipe
