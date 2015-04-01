@@ -25,17 +25,27 @@ window.Pipe = (function() {
 
 		if (this.top.x < -20) {
 			this.deletePipe(this.id); // delete the pipe if it has passed by
+		} else if (this.top.x >= 35 && this.top.x <= 45) {
+			this.checkCollision();
 		} else if ( this.top.x <= 42) {
 			$('.score').text(this.id); // update the score
 		}
+
 		this.top.x -= 0.4;
 
 		//Update UI
 		$('#'+ this.id).css('transform', 'translate3d(' + this.top.x + 'em, 0em, 0em)');
 	};
 
-	Pipe.prototype.checkCollision = function(player) {
+	Pipe.prototype.checkCollision = function() {
+		var playerpos = this.game.player.pos;
 
+		// check top pipe
+		if (playerpos.y <= this.top.y) {
+			this.game.gameover();
+		} else if (playerpos.y >= (this.bottom.y + this.top.y)) {
+			this.game.gameover();
+		}
 	};
 
 	Pipe.prototype.deletePipe = function (id) {

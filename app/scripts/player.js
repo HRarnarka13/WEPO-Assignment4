@@ -43,8 +43,6 @@ window.Player = (function() {
 	Player.prototype.checkCollisionWithBounds = function() {
 		if (this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
 			return this.game.gameover();
-		} else if ( this.game.pipes.checkCollision(this.pos) ) {
-			return this.game.gameover();
 		}
 	};
 
