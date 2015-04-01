@@ -13,10 +13,9 @@ window.Ground = (function() {
 		if (this.x < -102.4){
 			this.x = 0;
 		}
-		//this.x -= 5.64;
 		this.x -= 0.4;
-		//this.el.css('background-position', this.x + 'px 0');
-		// console.log(this.x);
+
+		// Update Ui
 		this.el.css('transform', 'translate3d(' + this.x + 'em, 0em, 0em)');
 	};
 
