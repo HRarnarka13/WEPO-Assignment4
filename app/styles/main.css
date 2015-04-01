@@ -83,8 +83,14 @@ background-position-y: -5em;
 	background-image: url('/images/ground.png');
 	background-repeat: repeat-x;
 }
-.Toppipe {
+
+.Pipe {
 	position: absolute;
+	width: 14em;
+	height: 50em;
+}
+
+.Toppipe {
 	width: 14em;
 	height: 14em;
 	background: url('/images/toppipe.png') bottom;
@@ -99,12 +105,12 @@ background-position-y: -5em;
 }
 
 .Bottompipe {
-	position: absolute;
-	margin-top: 40em;
+	margin-top: 30em;
 	width: 14em;
 	height: 14em;
 	background-image: url('/images/pipe.png');
 	background-repeat: no-repeat;
+	/*
 	-moz-transform: scaleY(-1);
     -o-transform: scaleY(-1);
     -webkit-transform: scaleY(-1);
@@ -112,4 +118,5 @@ background-position-y: -5em;
     transform: scaleY(-1);
     -ms-filter: "FlipH";
     filter: FlipH;
+    */
 }
