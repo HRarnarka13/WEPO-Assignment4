@@ -14,7 +14,7 @@ window.Pipe = (function() {
 
     	// Create a top an bottom pipe
     	var top = "<div style='height: " + this.top.y + "em' class='Toppipe'></div>"
-    	var bot = "<div style='margin-top: " + this.bottom.y + "em; height: " + 100 + "em' class='Bottompipe'></div>"
+    	var bot = "<div style='margin-top: " + this.bottom.y + "em; height: " + 40 + "em' class='Bottompipe'></div>"
 
     	// Append the pipes to the list of pipes
     	$('#'+ this.id).append(top);

@@ -86,14 +86,15 @@ background-position-y: -5em;
 
 .Pipe {
 	position: absolute;
-	width: 14em;
+	width: 10em;
 	height: 50em;
 }
 
 .Toppipe {
-	width: 14em;
+	width: 10em;
 	height: 14em;
 	background: url('/images/toppipe.png') bottom;
+	background-size: cover;
 	background-repeat: no-repeat;
 	-moz-transform: scaleY(1);
     -o-transform: scaleY(1);
@@ -106,9 +107,10 @@ background-position-y: -5em;
 
 .Bottompipe {
 	margin-top: 30em;
-	width: 14em;
+	width: 10em;
 	height: 14em;
 	background-image: url('/images/pipe.png');
+	background-size: cover;
 	background-repeat: no-repeat;
 	/*
 	-moz-transform: scaleY(-1);
