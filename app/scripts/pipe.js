@@ -38,12 +38,13 @@ window.Pipe = (function() {
 	};
 
 	Pipe.prototype.checkCollision = function() {
+		console.log(this.game.player.HEIGHT);
 		var playerpos = this.game.player.pos;
 
 		// check top pipe
 		if (playerpos.y <= this.top.y) {
 			this.game.gameover();
-		} else if (playerpos.y >= (this.bottom.y + this.top.y)) {
+		} else if (playerpos.y >= (GAPHEIGHT - this.game.player.HEIGHT + this.top.y)) {
 			this.game.gameover();
 		}
 	};

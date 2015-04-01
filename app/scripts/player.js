@@ -9,7 +9,6 @@ window.Player = (function() {
 	var JUMP = 0.3;
 	var FALL = 0.4;
 	var WIDTH = 5;
-	var HEIGHT = 5;
 	var INITIAL_POSITION_X = 40;
 	var INITIAL_POSITION_Y = 25;
 
@@ -41,11 +40,12 @@ window.Player = (function() {
 	};
 
 	Player.prototype.checkCollisionWithBounds = function() {
-		if (this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
+		if (this.pos.y + this.HEIGHT > this.game.WORLD_HEIGHT) {
 			return this.game.gameover();
 		}
 	};
 
+	Player.prototype.HEIGHT = 5;
 	return Player;
 
 })();

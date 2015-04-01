@@ -22,7 +22,7 @@ window.Pipes = (function() {
     	var newpipe = "<div class='Pipe' id='" + this.pipeID + "'></div>"
     	$('.Pipes').append(newpipe);
 
-    	// TODO: Generate a random number
+        //random pipe height
     	var pipeHeight = Math.random() * (28 - 7) + 7;
 
 
