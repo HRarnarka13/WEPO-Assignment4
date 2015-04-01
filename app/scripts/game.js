@@ -11,9 +11,7 @@ window.Game = (function() {
 		this.el = el;
 		this.player = new window.Player(this.el.find('.Player'), this);
 		this.ground = new window.Ground(this.el.find('.Ground'), this);
-		this.pipes = [];
-		this.pipes.push(new window.Pipe(this.el.find('.Toppipe'), this));
-		this.pipes.push(new window.Pipe(this.el.find('.Bottompipe'), this));
+		this.pipes = new window.Pipes(this.el.find('.Pipes'), this);
 		this.isPlaying = false;
 
 		// Cache a bound onFrame since we need it each frame.
@@ -38,12 +36,10 @@ window.Game = (function() {
 		// Update game entities.
 		this.player.onFrame(delta);
 		this.ground.onFrame(delta);
-		for (var i = this.pipes.length - 1; i >= 0; i--) {
-			this.pipes[i].onFrame(delta); 
-		};
+		this.pipes.onFrame(delta);
 		// this.toppipe.onFrame(delta);
 		// this.bottompipe.onFrame(delta);
-		
+
 		// Request next frame.
 		window.requestAnimationFrame(this.onFrame);
 	};
@@ -53,6 +49,11 @@ window.Game = (function() {
 	 */
 	Game.prototype.start = function() {
 		this.reset();
+
+		var that = this;
+		this.intervalID = setInterval(function () {
+			return that.pipes.generatePipes();
+		},3000);
 
 		// Restart the onFrame loop
 		this.lastFrame = +new Date() / 1000;
@@ -65,6 +66,7 @@ window.Game = (function() {
 	 */
 	Game.prototype.reset = function() {
 		this.player.reset();
+
 	};
 
 	/**
@@ -72,6 +74,7 @@ window.Game = (function() {
 	 */
 	Game.prototype.gameover = function() {
 		this.isPlaying = false;
+		clearInterval(this.intervalID);
 
 		// Should be refactored into a Scoreboard class.
 		var that = this;
