@@ -10,6 +10,7 @@ window.Game = (function() {
 	var Game = function(el) {
 		this.el = el;
 		this.player = new window.Player(this.el.find('.Player'), this);
+		this.wing = new window.Wing(this.el.find('.Wing'), this);
 		this.ground = new window.Ground(this.el.find('.Ground'), this);
 		this.pipes = new window.Pipes(this.el.find('.Pipes'), this);
 		this.isPlaying = false;
@@ -35,6 +36,7 @@ window.Game = (function() {
 
 		// Update game entities.
 		this.player.onFrame(delta);
+		this.wing.onFrame(delta);
 		this.ground.onFrame(delta);
 		this.pipes.onFrame(delta);
 		// this.toppipe.onFrame(delta);
@@ -51,6 +53,7 @@ window.Game = (function() {
 		this.reset();
 
 		var that = this;
+		that.pipes.generatePipes();
 		this.intervalID = setInterval(function () {
 			return that.pipes.generatePipes();
 		},1700);
@@ -66,7 +69,9 @@ window.Game = (function() {
 	 */
 	Game.prototype.reset = function() {
 		this.player.reset();
-
+		this.wing.reset();
+		this.pipes.reset();
+		$('.score').text(0);
 	};
 
 	/**
