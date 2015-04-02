@@ -131,4 +131,11 @@
 	background-size: cover;
 }
 
+.Sun {
+	position: absolute;
+	width: 14em;
+	height: 14em;
+	background-image: url('/images/sun.png');
+	background-size: cover;
+}
 
