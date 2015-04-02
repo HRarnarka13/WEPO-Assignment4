@@ -13,7 +13,7 @@ window.Game = (function() {
 		this.wing = new window.Wing(this.el.find('.Wing'), this);
 		this.ground = new window.Ground(this.el.find('.Ground'), this);
 		this.pipes = new window.Pipes(this.el.find('.Pipes'), this);
-		this.sun = new window.Sun(this.el.find('.Sun'), this);
+		this.spaceship = new window.Spaceship(this.el.find('.Spaceship'), this);
 		this.isPlaying = false;
 
 		// Cache a bound onFrame since we need it each frame.
@@ -40,7 +40,7 @@ window.Game = (function() {
 		this.wing.onFrame(delta);
 		this.ground.onFrame(delta);
 		this.pipes.onFrame(delta);
-		this.sun.onFrame(delta);
+		this.spaceship.onFrame(delta);
 		// this.toppipe.onFrame(delta);
 		// this.bottompipe.onFrame(delta);
 
@@ -73,7 +73,7 @@ window.Game = (function() {
 		this.player.reset();
 		this.wing.reset();
 		this.pipes.reset();
-		this.sun.reset();
+		this.spaceship.reset();
 		$('.score').text(0);
 	};
 

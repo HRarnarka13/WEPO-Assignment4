@@ -131,11 +131,11 @@
 	background-size: cover;
 }
 
-.Sun {
+.Spaceship {
 	position: absolute;
-	width: 14em;
-	height: 14em;
-	background-image: url('/images/sun.png');
+	width: 5em;
+	height: 2em;
+	background-image: url('/images/spaceship.png');
 	background-size: cover;
 }
 

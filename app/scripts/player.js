@@ -36,15 +36,18 @@ window.Player = (function() {
 
 		this.checkCollisionWithBounds();
 
+		if (Controls.didJump() ) {
+			this.rotation = 0;
+		}
 		// Update UI
 		if (Controls.isJumping) {
 			// No falling effect
-			this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, 0em)');
-			this.rotation = 0;
+			this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, 0em) rotate(' + this.rotation + 'deg)');
+			this.rotation -= 2.5;
 		} else {
 			// With falling effect
-			if (this.rotation <= 80) {
-				this.rotation++;
+			if (this.rotation <= 60) {
+				this.rotation += 1.7;
 			}
 			this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, 0em) rotate(' + this.rotation + 'deg)');
 		}
