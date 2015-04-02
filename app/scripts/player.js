@@ -16,6 +16,7 @@ window.Player = (function() {
 		this.el = el;
 		this.game = game;
 		this.pos = { x: 0, y: 0 };
+		this.rotation = 0;
 	};
 
 	/**
@@ -27,8 +28,8 @@ window.Player = (function() {
 	};
 
 	Player.prototype.onFrame = function(delta) {
-		if (Controls.keys.space) {
-			this.pos.y -= 0.03 * SPEED;
+		if (Controls.isJumping) {
+			this.pos.y -= 1.3;
 		} else {
 			this.pos.y += FALL;
 		}
@@ -36,7 +37,18 @@ window.Player = (function() {
 		this.checkCollisionWithBounds();
 
 		// Update UI
-		this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, 0em)');
+		if (Controls.isJumping) {
+			// No falling effect
+			this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, 0em)');
+			this.rotation = 0;
+		} else {
+			// With falling effect
+			if (this.rotation <= 80) {
+				this.rotation++;
+			}
+			this.el.css('transform', 'translate3d(' + this.pos.x + 'em, ' + this.pos.y + 'em, 0em) rotate(' + this.rotation + 'deg)');
+		}
+
 	};
 
 	Player.prototype.checkCollisionWithBounds = function() {
