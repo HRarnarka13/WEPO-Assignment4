@@ -78,6 +78,12 @@ window.Game = (function() {
 	 * Signals that the game is over.
 	 */
 	Game.prototype.gameover = function() {
+
+		// Play scream
+		var scream = document.getElementById("WilhelmScream");
+		scream.volume = 0.3;
+		scream.play();
+
 		this.isPlaying = false;
 		clearInterval(this.intervalID);
 

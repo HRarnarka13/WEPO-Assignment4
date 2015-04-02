@@ -37,6 +37,10 @@ window.Controls = (function() {
             setTimeout(function () {
                 that.isJumping = false;
             }, 100);
+
+            var flap = document.getElementById("Flap");
+            flap.volume = 0.01;
+            flap.cloneNode(true).play();
         }
 
         // Remember that this button is down.
