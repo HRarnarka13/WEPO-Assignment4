@@ -30,9 +30,11 @@ window.Pipes = (function() {
     	this.pipes.push(new window.Pipe(pipeHeight, this.pipeID, this.game));
     };
 
-    Pipes.prototype.checkCollision = function (player) {
+    Pipes.prototype.reset = function () {
     	// TODO : implement
-    	return false;
+        $('.Pipe').remove();
+        this.pipes = [];
+        this.pipeID = 0;
     };
 
     return Pipes;

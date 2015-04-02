@@ -38,7 +38,6 @@ window.Pipe = (function() {
 	};
 
 	Pipe.prototype.checkCollision = function() {
-		console.log(this.game.player.HEIGHT);
 		var playerpos = this.game.player.pos;
 
 		// check top pipe
