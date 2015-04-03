@@ -139,3 +139,12 @@
 	background-size: cover;
 }
 
+.highscore {
+	position: absolute;
+  	font-size: 6em;
+  	width: 100%;
+  	display: block;
+  	text-align: center;
+  	color: #fff;
+  	z-index: 4;
+}

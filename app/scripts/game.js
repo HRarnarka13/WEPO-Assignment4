@@ -14,6 +14,7 @@ window.Game = (function() {
 		this.ground = new window.Ground(this.el.find('.Ground'), this);
 		this.pipes = new window.Pipes(this.el.find('.Pipes'), this);
 		this.spaceship = new window.Spaceship(this.el.find('.Spaceship'), this);
+		this.highscore = 0;
 		this.isPlaying = false;
 
 		// Cache a bound onFrame since we need it each frame.
@@ -81,6 +82,14 @@ window.Game = (function() {
 	 * Signals that the game is over.
 	 */
 	Game.prototype.gameover = function() {
+
+
+		this.highscore = $('.highscore').text();
+		var score = $('.score').text();
+
+		if (score > this.highscore) {
+			$('.highscore').text(score);
+		}
 
 		// Play scream
 		var scream = document.getElementById("WilhelmScream");
