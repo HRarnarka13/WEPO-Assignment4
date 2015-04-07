@@ -1,11 +1,11 @@
 window.Ground = (function() {
-    'use strict';
+	'use strict';
 
-    var Ground = function(el, game) {
-    	this.el = el;
-    	this.game = game;
-    	this.sealvl = 7.6;
-    	this.x = 0;
+	var Ground = function(el, game) {
+		this.el = el;
+		this.game = game;
+		this.sealvl = 7.6;
+		this.x = 0;
 	};
 
 	Ground.prototype.onFrame = function(delta) {

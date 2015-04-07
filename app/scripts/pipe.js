@@ -1,27 +1,27 @@
 window.Pipe = (function() {
-    'use strict';
+	'use strict';
 
-    var GAPHEIGHT = 15;
+	var GAPHEIGHT = 15;
 
-    var Pipe = function(topHeight, id, game) {
-    	this.topHeight = topHeight;
-    	this.id = id;
-    	this.game = game;
-    	this.top = { x: 102.4, y: topHeight };
-    	var bottomHeight = GAPHEIGHT;
-    	this.bottom = { x:102.4, y: bottomHeight };
+	var Pipe = function(topHeight, id, game) {
+		this.topHeight = topHeight;
+		this.id = id;
+		this.game = game;
+		this.top = { x: 102.4, y: topHeight };
+		var bottomHeight = GAPHEIGHT;
+		this.bottom = { x:102.4, y: bottomHeight };
 
 
-    	// Create a top an bottom pipe
-    	var top = "<div style='height: " + this.top.y + "em' class='Toppipe'></div>"
-    	var bot = "<div style='margin-top: " + this.bottom.y + "em; height: " + 40 + "em' class='Bottompipe'></div>"
+		// Create a top an bottom pipe
+		var top = "<div style='height: " + this.top.y + "em' class='Toppipe'></div>";
+		var bot = "<div style='margin-top: " + this.bottom.y + "em; height: " + 40 + "em' class='Bottompipe'></div>";
 
-    	// Append the pipes to the list of pipes
-    	$('#'+ this.id).append(top);
-    	$('#'+ this.id).append(bot);
-	};
+		// Append the pipes to the list of pipes
+		$('#'+ this.id).append(top);
+		$('#'+ this.id).append(bot);
+    };
 
-	Pipe.prototype.onFrame = function(delta) {
+    Pipe.prototype.onFrame = function(delta) {
 
 		if (this.top.x < -20) {
 			this.deletePipe(this.id); // delete the pipe if it has passed by
@@ -49,8 +49,8 @@ window.Pipe = (function() {
 	};
 
 	Pipe.prototype.deletePipe = function (id) {
-    	$('#' + id).remove();
-    };
+		$('#' + id).remove();
+	};
 
 	Pipe.prototype.method_name = function(first_argument) {
 		// body...
