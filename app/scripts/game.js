@@ -1,4 +1,3 @@
-
 window.Game = (function() {
 	'use strict';
 
