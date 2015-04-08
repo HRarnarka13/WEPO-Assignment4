@@ -90,10 +90,14 @@ window.Game = (function() {
 			$('.highscore').text(score);
 		}
 
-		// Play scream
-		var scream = document.getElementById("WilhelmScream");
-		scream.volume = 0.3;
-		scream.play();
+		// Play scream unless sound is muted
+		var background = document.getElementById("backgroundMusic");
+		if(!background.paused)
+		{
+			var scream = document.getElementById("WilhelmScream");
+			scream.volume = 0.3;
+			scream.play();
+		}
 
 		this.isPlaying = false;
 		clearInterval(this.intervalID);
