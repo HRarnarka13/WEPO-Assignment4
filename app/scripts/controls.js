@@ -38,9 +38,16 @@ window.Controls = (function() {
                 that.isJumping = false;
             }, 100);
 
-            var flap = document.getElementById("Flap");
-            flap.volume = 0.01;
-            flap.cloneNode(true).play();
+            var background = document.getElementById("backgroundMusic");
+
+            //play flapping sound unless sound is paused
+            if(!background.paused)
+            {
+                var flap = document.getElementById("Flap");
+                flap.volume = 0.01;
+                flap.cloneNode(true).play();
+            }
+            
         }
 
         // Remember that this button is down.
