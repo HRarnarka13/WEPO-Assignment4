@@ -84,7 +84,7 @@ window.Game = (function() {
 
 
 		this.highscore = $('.highscore').text();
-		var score = $('.score').text();
+		var score = $('.score').first().text();
 
 		if (score > this.highscore) {
 			$('.highscore').text(score);

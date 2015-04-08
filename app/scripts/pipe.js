@@ -28,7 +28,7 @@ window.Pipe = (function() {
 		} else if (this.top.x >= 35 && this.top.x <= 45) {
 			this.checkCollision();
 		} else if ( this.top.x <= 42) {
-			$('.score').text(this.id); // update the score
+			Pipe.prototype.score =$ ('.score').text(this.id); // update the score
 		}
 
 		this.top.x -= 0.4;
