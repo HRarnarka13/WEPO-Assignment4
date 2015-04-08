@@ -87,7 +87,7 @@
 .Pipe {
 	position: absolute;
 	width: 10em;
-	height: 50em;
+	height: 14em;
 }
 
 .Toppipe {
@@ -112,15 +112,6 @@
 	background-image: url('/images/pipe.png');
 	background-size: cover;
 	background-repeat: no-repeat;
-	/*
-	-moz-transform: scaleY(-1);
-    -o-transform: scaleY(-1);
-    -webkit-transform: scaleY(-1);
-    -ms-transform: scaleY(-1);
-    transform: scaleY(-1);
-    -ms-filter: "FlipH";
-    filter: FlipH;
-    */
 }
 
 .Wing {
